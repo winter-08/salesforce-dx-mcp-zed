@@ -1,0 +1,17 @@
+[package]
+name = "salesforce-dx-mcp-zed"
+version = "0.0.1"
+edition = "2021"
+publish = false
+
+[lib]
+path = "src/salesforce_dx_mcp_server.rs"
+crate-type = ["cdylib"]
+
+[dependencies]
+schemars = "1.1.0"
+serde = "1.0.228"
+zed_extension_api = "0.7.0"
+
+[dev-dependencies]
+serde_json = "1.0.145"

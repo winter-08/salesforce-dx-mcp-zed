@@ -1,0 +1,10 @@
+id = "mcp-server-salesforce-dx"
+name = "Salesforce DX MCP Server"
+description = "Salesforce DX's Model Context Server"
+version = "0.0.1"
+schema_version = 1
+authors = ["winter.jb@icloud.com"]
+repository = "https://github.com/winter-08/salesforce-dx-mcp-zed"
+
+[context_servers.mcp-server-salesforce-dx]
+name = "Salesforce DX Model Context Protocol Server"

@@ -1,0 +1,9 @@
+{
+  "orgs": ["DEFAULT_TARGET_ORG"],
+  "toolsets": ["core"],
+  "tools": [],
+  "dynamic_tools": false,
+  "debug": false,
+  "no_telemetry": true,
+  "allow_non_ga_tools": false
+}

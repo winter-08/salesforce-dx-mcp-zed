@@ -1,0 +1,8 @@
+/target
+*.wasm
+
+!src
+!src/*.rs
+!configuration
+!configuration/*
+!extension.toml
