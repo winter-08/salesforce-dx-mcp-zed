@@ -1,42 +1,39 @@
 use schemars::JsonSchema;
-use serde::{Deserialize, Serialize};
+use serde::Deserialize;
 use zed::settings::ContextServerSettings;
 use zed_extension_api::{
     self as zed, serde_json, Command, ContextServerConfiguration, ContextServerId, Project, Result,
 };
+
 const MCP_PACKAGE_NAME: &str = "@salesforce/mcp";
 const MCP_SERVER_PATH: &str = "node_modules/@salesforce/mcp/bin/run.js";
 
 struct SalesforceDxMcpExtension;
 
-#[derive(Debug, Deserialize, Serialize, JsonSchema)]
+#[derive(Debug, Deserialize, JsonSchema)]
+#[serde(default)]
 struct SfdxContextServerSettings {
-    #[serde(default = "default_orgs")]
     orgs: Vec<String>,
-    #[serde(default = "default_toolsets")]
     toolsets: Vec<String>,
-    #[serde(default)]
     tools: Vec<String>,
-    #[serde(default)]
     dynamic_tools: bool,
-    #[serde(default)]
     debug: bool,
-    #[serde(default = "default_true")]
     no_telemetry: bool,
-    #[serde(default)]
     allow_non_ga_tools: bool,
 }
 
-fn default_orgs() -> Vec<String> {
-    vec!["DEFAULT_TARGET_ORG".to_string()]
-}
-
-fn default_toolsets() -> Vec<String> {
-    vec!["core".to_string()]
-}
-
-fn default_true() -> bool {
-    true
+impl Default for SfdxContextServerSettings {
+    fn default() -> Self {
+        Self {
+            orgs: vec!["DEFAULT_TARGET_ORG".to_string()],
+            toolsets: vec!["core".to_string()],
+            tools: Vec::new(),
+            dynamic_tools: false,
+            debug: false,
+            no_telemetry: true,
+            allow_non_ga_tools: false,
+        }
+    }
 }
 
 impl SfdxContextServerSettings {

@@ -11,8 +11,8 @@ for interacting with Salesforce orgs.
 
 ## Configuration
 
-For details on configuration options see
-[here](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp_server.htm#sfdx_dev_mcp_configure_orgs_toolsets).
+For details on configuration options see the
+[MCP Server documentation.](https://developer.salesforce.com/docs/atlas.en-us.sfdx_dev.meta/sfdx_dev/sfdx_dev_mcp_server.htm#sfdx_dev_mcp_configure_orgs_toolsets)
 
 - `orgs`: List of org aliases to connect to (use `DEFAULT_TARGET_ORG` for the
   default org)
